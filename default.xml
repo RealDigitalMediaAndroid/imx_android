@@ -8,6 +8,8 @@
            fetch="ssh://git@git.bitbucket.org/gateworks-android/" />
   <remote  name="gateworks-github"
            fetch="git://github.com/Gateworks/" />
+  <remote  name="rdm-android-github"
+           fetch="git://github.com/RealDigitalMediaAndroid/" />
   <remote  name="github"
            fetch="git://github.com/" />
   <remote  name="android-x86"
@@ -48,7 +50,7 @@
   <project path="external/busybox" name="android-busybox" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-lib" name="android_external_linux-lib" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-test" name="imx-linux-test" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
-  <project path="external/mtd-utils" name="android_external_mtd-utils" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
+  <project path="external/mtd-utils" name="android_mtd-utils" remote="rdm-android-github" revision="android" />
   <project path="external/ntfs-3g" name="ntfs-3g" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/powerdebug" name="powerdebug" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="packages/apps/fsl_imx_demo" name="fsl_imx_demo" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
