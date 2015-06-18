@@ -10,6 +10,8 @@
            fetch="git://github.com/Gateworks/" />
   <remote  name="rdm-android-github"
            fetch="git://github.com/RealDigitalMediaAndroid/" />
+  <remote  name="sr105-bitbucket"
+           fetch="ssh://git@bitbucket.org/sr105/" />
   <remote  name="github"
            fetch="git://github.com/" />
   <remote  name="android-x86"
@@ -19,18 +21,21 @@
            remote="aosp"
            sync-j="4" />
 
-  <!-- Gateworks kernel and u-boot -->
-  <project path="kernel_imx" name="linux-imx6" revision="gateworks_kk4.4.3_2.0.0-ga" remote="gateworks-github" />
-  <project path="bootable/bootloader/uboot-imx" name="u-boot-imx6" revision="gateworks_v2015.04" remote="gateworks-github" />
+  <!-- Gateworks kernel and u-boot (RDM modified) -->
+  <project path="kernel_imx" name="linux-imx6" revision="anthony" remote="rdm-android-github" />
+  <project path="bootable/bootloader/uboot-imx" name="u-boot-imx6" revision="anthony" remote="rdm-android-github" />
 
-  <!-- Gateworks device layer -->
-  <project path="device/gateworks" name="android_device_gateworks" revision="imx_kk4.4.3_2.0.0-ga" remote="gateworks-github" groups="pdk" />
+  <!-- Gateworks device layer (RDM modified) -->
+  <project path="device/gateworks" name="android_device_gateworks" revision="anthony" remote="rdm-android-github" groups="pdk" />
+  <project path="device/rdm" name="android_device_rdm" revision="anthony" remote="rdm-android-github" />
 
-  <!-- Gateworks patches to other (OpenSource) components -->
-  <project path="build" name="android_build" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" groups="pdk" >
+  <!-- Gateworks patches to other (OpenSource) components (RDM modified) -->
+  <project path="system/core" name="android_system_core" remote="rdm-android-github" revision="anthony" />
+  <project path="build" name="android_build" remote="rdm-android-github" revision="anthony" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="system/core" name="android_system_core" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
+
+  <!-- Gateworks patches to other (OpenSource) components -->
   <project path="external/can-utils" name="android_can-utils" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
 
   <!-- Gateworks patches to Freescale (proprietary) components -->
@@ -40,8 +45,10 @@
   <project path="external/i2c-tools" name="suapapa/i2c-tools" remote="github" revision="android" />
   <project path="packages/apps/TSCalibration2" name="platform/packages/apps/TSCalibration2" remote="android-x86" revision="kitkat-x86" />
 
+  <!-- projects (proprietary) added by Freescale (RDM modified) -->
+  <project path="device/fsl" name="android_device_fsl" remote="sr105-bitbucket" revision="anthony" />
+
   <!-- projects (proprietary) added by Freescale -->
-  <project path="device/fsl" name="android_device_fsl" remote="fsl-proprietary" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="device/fsl-proprietary" name="fsl-proprietary" remote="fsl-proprietary" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/fsl_vpu_omx" name="fsl_vpu_omx" remote="fsl-proprietary" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-firmware-imx" name="linux-firmware-imx" remote="fsl-proprietary" revision="imx_kk4.4.3_2.0.0-ga" />
@@ -50,10 +57,16 @@
   <project path="external/busybox" name="android-busybox" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-lib" name="android_external_linux-lib" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-test" name="imx-linux-test" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
-  <project path="external/mtd-utils" name="android_mtd-utils" remote="rdm-android-github" revision="android" />
   <project path="external/ntfs-3g" name="ntfs-3g" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/powerdebug" name="powerdebug" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="packages/apps/fsl_imx_demo" name="fsl_imx_demo" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
+
+  <!-- projects (OpenSource) added by Freescale -->
+  <project path="external/mtd-utils" name="android_mtd-utils" remote="rdm-android-github" revision="android" />
+
+  <!-- projects (OpenSource) updated by Freescale & RDM -->
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="rdm-android-github" revision="anthony" />
+  <project path="packages/apps/Launcher2" name="platform_packages_apps_Launcher2" remote="rdm-android-github" revision="anthony" />
 
   <!-- projects (OpenSource) updated by Freescale -->
   <project path="bionic" name="android_bionic" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
@@ -62,7 +75,6 @@
   <project path="external/iptables" name="android_external_iptables" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/kernel-headers" name="android_external_kernel-headers" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-tools-perf" name="android_external_linux-tools-perf" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
-  <project path="bootable/recovery" name="android_bootable_recovery" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="dalvik" name="platform-dalvik" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/chromium_org" name="platform-external-chromium_org" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/ppp" name="android_external_ppp" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
@@ -87,7 +99,6 @@
   <project path="external/libselinux" name="platform_external_libselinux" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" groups="pdk" />
   <project path="external/openssl" name="platform_external_openssl" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" groups="pdk" />
   <project path="frameworks/webview" name="platform_frameworks_webview" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
-  <project path="packages/apps/Launcher2" name="platform_packages_apps_Launcher2" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="packages/apps/Mms" name="platform_packages_apps_Mms" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
 
   <!-- Untouched projects -->
