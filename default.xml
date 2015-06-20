@@ -10,8 +10,8 @@
            fetch="git://github.com/Gateworks/" />
   <remote  name="rdm-android-github"
            fetch="git://github.com/RealDigitalMediaAndroid/" />
-  <remote  name="sr105-bitbucket"
-           fetch="ssh://git@bitbucket.org/sr105/" />
+  <remote  name="rdm-github"
+           fetch="ssh://git@github.com/RealDigitalMedia/" />
   <remote  name="github"
            fetch="git://github.com/" />
   <remote  name="android-x86"
@@ -27,7 +27,7 @@
 
   <!-- Gateworks device layer (RDM modified) -->
   <project path="device/gateworks" name="android_device_gateworks" revision="anthony" remote="rdm-android-github" groups="pdk" />
-  <project path="device/rdm" name="android_device_rdm" revision="anthony" remote="rdm-android-github" />
+  <project path="device/rdm" name="android_device_rdm" revision="anthony" remote="rdm-github" />
 
   <!-- Gateworks patches to other (OpenSource) components (RDM modified) -->
   <project path="system/core" name="android_system_core" remote="rdm-android-github" revision="anthony" />
@@ -46,7 +46,7 @@
   <project path="packages/apps/TSCalibration2" name="platform/packages/apps/TSCalibration2" remote="android-x86" revision="kitkat-x86" />
 
   <!-- projects (proprietary) added by Freescale (RDM modified) -->
-  <project path="device/fsl" name="android_device_fsl" remote="sr105-bitbucket" revision="anthony" />
+  <project path="device/fsl" name="android_device_fsl" remote="rdm-github" revision="anthony" />
 
   <!-- projects (proprietary) added by Freescale -->
   <project path="device/fsl-proprietary" name="fsl-proprietary" remote="fsl-proprietary" revision="imx_kk4.4.3_2.0.0-ga" />
