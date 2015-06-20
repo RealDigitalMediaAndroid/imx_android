@@ -27,7 +27,7 @@
 
   <!-- Gateworks device layer (RDM modified) -->
   <project path="device/gateworks" name="android_device_gateworks" revision="anthony" remote="rdm-android-github" groups="pdk" />
-  <project path="device/rdm" name="android_device_rdm" revision="anthony" remote="rdm-github" />
+  <project path="device/rdm" name="android_device_rdm" revision="master" remote="rdm-github" />
 
   <!-- Gateworks patches to other (OpenSource) components (RDM modified) -->
   <project path="system/core" name="android_system_core" remote="rdm-android-github" revision="anthony" />
