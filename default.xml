@@ -68,6 +68,9 @@
   <project path="bootable/recovery" name="android_bootable_recovery" remote="rdm-android-github" revision="anthony" />
   <project path="packages/apps/Launcher2" name="platform_packages_apps_Launcher2" remote="rdm-android-github" revision="anthony" />
 
+  <!-- projects (OpenSource) updated by RDM -->
+  <project path="external/openssh" name="platform/external/openssh" remote="rdm-android-github" revision="anthony" />
+
   <!-- projects (OpenSource) updated by Freescale -->
   <project path="bionic" name="android_bionic" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/dnsmasq" name="android_external_dnsmasq" groups="pdk" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
@@ -276,7 +279,6 @@
   <project path="external/open-vcdiff" name="platform/external/open-vcdiff" />
   <project path="external/opencv" name="platform/external/opencv" />
   <project path="external/openfst" name="platform/external/openfst" />
-  <project path="external/openssh" name="platform/external/openssh" />
   <project path="external/oprofile" name="platform/external/oprofile" />
   <project path="external/pixman" name="platform/external/pixman" />
   <project path="external/proguard" name="platform/external/proguard" groups="pdk-java" />
